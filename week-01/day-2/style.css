@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+li {
+    display: inline;
+}
+
+article {
+    margin: 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Noto Sans', sans-serif;
+}
+h1 {
+    font-size: 35px;
+}
+h2 {
+    color:#FC55AF;
+}
+h3 {
+    text-align: center;
+    font-size: 22px;
+}
+h4 {
+    font-size: 17px;
+}
+h5 {
+    text-align: center;
+}
+
+p {
+    font-family: Courier New, Courier, monospace;
+}
+
+nav {
+    height: 35px;
+    color: rgb(247, 195, 223);
+    text-align: right;
+    text-decoration: none;
+    font-family: Courier New, Courier, monospace;
+    background-color: #333333;
+    
+
+}
+a {
+    color: #FC55AF;
+}
