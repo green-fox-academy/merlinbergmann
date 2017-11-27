@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    font-size: 10px;
+}
+
+.main {
+    display: flex;
+    position: relative;
+   	margin:0px auto;
+    flex-direction: column;
+    background: #127731;
+    width: 628px;
+}
+
+.form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 12px;
+    background-color: #FFE42E;
+}
+
+
+.form.full {
+    height: 72px;
+    width: 604px;
+    flex: 1 1 100%;
+ }
+
+ .form.half {
+    height: 400px;
+    width: 288px;
+    flex: 1 1 50%;
+}
+
+.left {
+	display: inline-block;
+}
+
+.right {
+	display: inline-block;
+}
+
+.number {
+	max-width: 120px;
+	display: inline-block;
+}
+
+.brands {
+	max-width: 288px;
+	max-height: 200px;
+	display: inline-block;
+}

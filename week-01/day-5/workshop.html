@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test form</title>
+    <link rel="stylesheet" href="formstyle.css">
+  </head>
+  <body>
+    <div class="main">  
+    <form action="/my-handling-form-page" method="post">
+    <article class="form title full">
+           <h1>Profile Setup</h1>
+    </article>
+    <article class="form left half">
+           <h1>Personal info</h1>
+        <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" required />
+        </div><br>
+        <div>
+        <fieldset>
+            <legend>Born in</legend>
+        <input type="number" min="1900" max="2099" step="1" value="1990" />
+        </fieldset>
+        <fieldset>
+            <legend>Gender</legend>
+
+        <input type="radio" id="gendermale"
+        name="gender" value="male">
+        <label for="gendermale">Male</label>
+
+        <input type="radio" id="genderfemale"
+        name="gender" value="male">
+        <label for="genderfemale">Female</label>
+        </fieldset>
+        </div>
+        <div class="brands">
+        <fieldset>
+            <legend>What's your favourite brands?</legend>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+            <input type="radio" id="radio">
+            <label for="radio">Click me</label>
+        </fieldset>
+        <p>You can choose multiple!</p>
+    </div>
+    </article>
+
+    <article class="form right half">
+           <h1>Contact</h1>
+        <div>
+            <fieldset>
+            <legend>Phone number</legend>
+            <input type="tel" required />
+            </fieldset>
+            <fieldset>
+            <legend>Email</legend>
+            <input type="email" required />
+            </fieldset>
+            <fieldset>
+            <legend>Facebook profile</legend>
+            <input type="url" >
+            </fieldset>
+            <fieldset>
+            <legend>What kind of building do you live in?</legend>
+            <select name="selection">
+            <option>Choose a type!</option>
+            <option>Apartment house</option> 
+            <option>Skyscraper</option> 
+            <option>Castle</option> 
+            <option>Squad</option>
+            <option>Homeless</option> 
+            </select>
+            </fieldset>
+        </div>
+        
+    </article>
+
+    <article class="form message full">
+        <div>
+            <label for="msg">Describe yourself in a few words!</label>
+            <textarea id="msg" name="user_message"></textarea>
+        </div>
+    </article>
+    <input type="submit" value="Submit"/> 
+    </form>
+    </div>  
+  </body>
+</html>
