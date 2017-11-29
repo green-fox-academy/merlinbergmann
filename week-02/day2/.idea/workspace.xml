@@ -60,13 +60,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppendA2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppendA2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppendA2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
               <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding>
                 <element signature="e#0#446#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SumAll.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SumAll.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#381#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/Matrix.java" />
         <option value="$PROJECT_DIR$/src/Colors.java" />
         <option value="$PROJECT_DIR$/src/AppendA2.java" />
+        <option value="$PROJECT_DIR$/src/SumAll.java" />
       </list>
     </option>
   </component>
@@ -137,7 +150,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1942" />
@@ -197,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AppendA2">
+  <component name="RunManager" selected="Application.SumAll">
     <configuration name="AppendA2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="AppendA2" />
@@ -254,9 +267,9 @@
       <module name="day2" />
       <envs />
     </configuration>
-    <configuration name="PrintElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SumAll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="PrintElements" />
+      <option name="MAIN_CLASS_NAME" value="SumAll" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -350,19 +363,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.PrintElements" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Matrix" />
-      <item index="2" class="java.lang.String" itemvalue="Application.DoubleItems" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Colors" />
-      <item index="4" class="java.lang.String" itemvalue="Application.AppendA2" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Matrix" />
+      <item index="1" class="java.lang.String" itemvalue="Application.DoubleItems" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Colors" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AppendA2" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SumAll" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.AppendA2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Colors" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Matrix" />
-        <item index="3" class="java.lang.String" itemvalue="Application.DoubleItems" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PrintElements" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SumAll" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AppendA2" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Colors" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Matrix" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DoubleItems" />
       </list>
     </recent_temporary>
   </component>
@@ -377,15 +390,15 @@
       <option name="presentableId" value="Default" />
       <updated>1511874128860</updated>
       <workItem from="1511874135998" duration="838000" />
-      <workItem from="1511884422185" duration="20888000" />
+      <workItem from="1511884422185" duration="21438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21726000" />
+    <option name="totallyTimeSpent" value="22276000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1046" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -596,6 +609,16 @@
           <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="e#0#446#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SumAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#381#0" expanded="true" />
           </folding>
         </state>
       </provider>
