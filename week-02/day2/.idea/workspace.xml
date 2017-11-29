@@ -82,13 +82,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompareLength.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CompareLength.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompareLength.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
               <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="e#0#533#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SumElements.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SumElements.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#305#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/PrintArguments.java" />
         <option value="$PROJECT_DIR$/src/Third.java" />
         <option value="$PROJECT_DIR$/src/CompareLength.java" />
+        <option value="$PROJECT_DIR$/src/SumElements.java" />
       </list>
     </option>
   </component>
@@ -188,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CompareLength">
+  <component name="RunManager" selected="Application.SumElements">
     <configuration name="CompareLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CompareLength" />
@@ -231,9 +244,9 @@
       <module name="day2" />
       <envs />
     </configuration>
-    <configuration name="Sum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SumElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Sum" />
+      <option name="MAIN_CLASS_NAME" value="SumElements" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -341,19 +354,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Sum" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Factorial" />
-      <item index="2" class="java.lang.String" itemvalue="Application.PrintArguments" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Third" />
-      <item index="4" class="java.lang.String" itemvalue="Application.CompareLength" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Factorial" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PrintArguments" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Third" />
+      <item index="3" class="java.lang.String" itemvalue="Application.CompareLength" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SumElements" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CompareLength" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Third" />
-        <item index="2" class="java.lang.String" itemvalue="Application.PrintArguments" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Factorial" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Sum" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SumElements" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CompareLength" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Third" />
+        <item index="3" class="java.lang.String" itemvalue="Application.PrintArguments" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Factorial" />
       </list>
     </recent_temporary>
   </component>
@@ -368,12 +381,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511874128860</updated>
       <workItem from="1511874135998" duration="838000" />
-      <workItem from="1511884422185" duration="11279000" />
+      <workItem from="1511884422185" duration="11547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12117000" />
+    <option name="totallyTimeSpent" value="12385000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
@@ -501,6 +514,16 @@
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="e#0#533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SumElements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#305#0" expanded="true" />
           </folding>
         </state>
       </provider>
