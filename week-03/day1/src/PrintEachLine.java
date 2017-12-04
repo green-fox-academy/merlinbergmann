@@ -10,9 +10,9 @@ public class PrintEachLine {
         // each of lines form the file.
         // If the program is unable to read the file (for example it does not exists),
         // then it should print an error message like: "Unable to read file: my-file.txt"
-        List<String> content = new ArrayList();
-        content.add("First line of my file");
-        try { Path filePath = Paths.get("my-file.txt");
+
+        try {
+            Path filePath = Paths.get("my-file.txt");
             List<String> lines = Files.readAllLines(filePath);
             for(int i=0;i<lines.size();i++){
                 System.out.println(lines.get(i));
