@@ -1,7 +1,6 @@
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PrintEachLine {
@@ -12,7 +11,7 @@ public class PrintEachLine {
         // then it should print an error message like: "Unable to read file: my-file.txt"
 
         try {
-            Path filePath = Paths.get("my-file.txt");
+            Path filePath = Paths.get("src/my-file.txt");
             List<String> lines = Files.readAllLines(filePath);
             for(int i=0;i<lines.size();i++){
                 System.out.println(lines.get(i));
