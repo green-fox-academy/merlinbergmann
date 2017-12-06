@@ -12,17 +12,25 @@ public class RainbowBoxes {
     // and draws a square of that size and color to the center of the canvas.
     // create a loop that fills the canvas with rainbow colored squares.
 
+    // This defines a random start value of the rainbow. Each time the program runs, it will generate
+    // a different rainbow!
+    float startHue = (float)(Math.random());
 
+    for (int i = 0; i < WIDTH; i += 2) {
+      //This iterates through the hue component of the colors!
+      drawRainbowBox(graphics, i, Color.getHSBColor(startHue + ((float) i / (float) WIDTH), 1, 1));
+    }
 
   }
 
-  private static void makeSquare() {
-
+  private static void drawRainbowBox(Graphics graphics, int size, Color color) {
+    graphics.setColor(color);
+    graphics.drawRect(WIDTH / 2 - size / 2, HEIGHT / 2 - size / 2, size, size);
   }
 
   //    Don't touch the code below
-  static int WIDTH = 320;
-  static int HEIGHT = 343;
+  static int WIDTH = 1960;
+  static int HEIGHT = 1080;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
