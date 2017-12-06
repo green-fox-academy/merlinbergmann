@@ -1,24 +1,26 @@
 
-
-
 import javax.swing.*;
 
         import java.awt.*;
-        import java.awt.Color;
 
         import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
+public class ColoredBoxes {
 
-  public static void mainDraw(Graphics g){
+  public static void mainDraw(Graphics graphics){
+    // draw a box that has different colored lines on each edge.
+    graphics.setColor(Color.BLACK);
+    graphics.drawLine(0,0,100,0);
 
-    //  draw a red horizontal line to the canvas' middle.
-    //  draw a green vertical line to the canvas' middle.
+    graphics.setColor(Color.PINK);
+    graphics.drawLine(0,0,0,100);
 
+    graphics.setColor(Color.GREEN);
+    graphics.drawLine(100,0,100,100);
 
-    g.setColor(Color.decode("#B07"));
-    g.drawLine(WIDTH / 2, 0, WIDTH / 2, HEIGHT);
-    g.drawLine(0, HEIGHT / 2, WIDTH, HEIGHT / 2);
+    graphics.setColor(Color.RED);
+    graphics.drawLine(0,100,100,100);
+
 
   }
 
@@ -26,15 +28,9 @@ public class LineInTheMiddle {
   static int WIDTH = 320;
   static int HEIGHT = 343;
 
-  static int WindowWidth = WIDTH;
-  static int WindowHeight = HEIGHT + 23;
-
-
-
-
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
-    jFrame.setSize(new Dimension(WindowWidth, WindowHeight));
+    jFrame.setSize(new Dimension(WIDTH, HEIGHT));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
     jFrame.setLocationRelativeTo(null);
@@ -45,7 +41,7 @@ public class LineInTheMiddle {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-      this.setBackground(Color.WHITE);
+
     }
   }
 
