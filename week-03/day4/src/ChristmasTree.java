@@ -16,22 +16,29 @@ public class ChristmasTree {
     System.out.println("How much decoration do you want to put on your christmas tree?");
     int level = scanner.nextInt();
 
-    int triangleHeight = (int) Math.round(WIDTH * Math.sqrt(3.0) / 2.0);
-    Point A = new Point(0, triangleHeight);
-    Point B = new Point(WIDTH / 2, 0);
-    Point C = new Point(WIDTH, triangleHeight);
+    int initialHight = HEIGHT - 75;
+    int triangleWidth = WIDTH / 3;
+    int triangleHeight = (int) Math.round(triangleWidth * Math.sqrt(3.0) / 2.0);
+
+    Point A = new Point(0, initialHight);
+    Point B = new Point(triangleWidth / 2, initialHight - triangleHeight);
+    Point C = new Point(triangleWidth, initialHight);
 
     for (int i = 0; i < size; i++) {
       makeTriangleOwn(level, g, A, B, C);
 
-      A.x += 0.1 * WIDTH;
-      A.y += triangleHeight / 2;
-      B.x -= 0.1 * WIDTH;
-      B.y += triangleHeight / 2;
-      C.x *= 0.1 * WIDTH;
-      C.y *= triangleHeight / 2;
-      WIDTH *= 0.9;
-      triangleHeight = (int) Math.round(WIDTH * Math.sqrt(3.0) / 2.0);
+
+      A.y -= triangleHeight;
+      A.x += (triangleWidth - triangleWidth * 0.7) / 2;
+      B.y -= (int) Math.round((triangleWidth * 0.7) * Math.sqrt(3.0) / 2.0);
+
+      C.y -= triangleHeight;
+      C.x -= (triangleWidth - triangleWidth * 0.7) / 2;
+      triangleWidth *= 0.7;
+
+      triangleHeight = (int) Math.round(triangleWidth * Math.sqrt(3.0) / 2.0);
+
+
     }
   }
 
@@ -62,8 +69,8 @@ public class ChristmasTree {
   }
 
   //    Don't touch the code below
-  static int WIDTH = 1080;
-  static int HEIGHT = 1080;
+  static int WIDTH = 600;
+  static int HEIGHT = 880;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
