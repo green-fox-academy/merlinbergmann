@@ -14,7 +14,7 @@ public class Garden {
 
   public void irrigate(int water) {
     System.out.println("Watering with " + water);
-
+// Introducing a seperate list that stores only plants that are in need of water.
     List<Plant> plantsThatNeedWater = new ArrayList<>();
 
     for (Plant plant : plants) {
@@ -25,10 +25,10 @@ public class Garden {
       }
       }
     for (Plant needyPlant : plantsThatNeedWater) {
-      needyPlant.waterMe(water / plantsThatNeedWater.size());
+      needyPlant.waterMe(water / plantsThatNeedWater.size()); //this allocates an even amount of water to each plant.
     }
     for (Plant plant : plants) {
-      System.out.println(plant.toString());
+      System.out.println(plant.toString()); // prints out each plant's water status
     }
   }
 }

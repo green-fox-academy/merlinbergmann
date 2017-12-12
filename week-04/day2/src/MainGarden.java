@@ -10,7 +10,7 @@ public class MainGarden {
     myGarden.addPlant(tree1);
     myGarden.addPlant(tree2);
 
-    myGarden.irrigate(0);
+    myGarden.irrigate(0); // This prints out the initial situation in our garden
     myGarden.irrigate(40);
     myGarden.irrigate(70);
   }

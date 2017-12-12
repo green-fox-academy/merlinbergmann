@@ -1,3 +1,6 @@
+// This superclass is needed so all types of plants can be stored in one list.
+// This ensures that we can divide the total amount of water between all of them.
+
 public class Plant {
   String type;
   String color;
