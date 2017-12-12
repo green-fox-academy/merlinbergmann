@@ -1,13 +1,22 @@
 public class Plant {
+  String type;
   String color;
-  int waterAbsorbed;
-  int enoughWater;
+  double waterAbsorbed = 0;
+  double enoughWater;
   double absorbs;
   boolean needsWater = true;
 
   public boolean waterMe(int water){
-    waterAbsorbed += water * absorbs;
+    waterAbsorbed += (double) water * absorbs;
+    if (waterAbsorbed >= enoughWater){
+      needsWater = false;
+    }
     return waterAbsorbed <= enoughWater;
+  }
+  @Override
+  public String toString() {
+    String waterState =  ((waterAbsorbed >= enoughWater) ? "doesn't need water" : "needs Water");
+    return "The "+ color + " " + type + " " + waterState;
   }
 }
 

@@ -13,17 +13,22 @@ public class Garden {
   }
 
   public void irrigate(int water) {
+    System.out.println("Watering with " + water);
 
     List<Plant> plantsThatNeedWater = new ArrayList<>();
 
     for (Plant plant : plants) {
       if (plant.needsWater) {
         plantsThatNeedWater.add(plant);
-
-        for (Plant needyPlant : plantsThatNeedWater) {
-          needyPlant.waterMe(water / plantsThatNeedWater.size());
-        }
+        } else {
+        plantsThatNeedWater.remove(plant);
       }
+      }
+    for (Plant needyPlant : plantsThatNeedWater) {
+      needyPlant.waterMe(water / plantsThatNeedWater.size());
+    }
+    for (Plant plant : plants) {
+      System.out.println(plant.toString());
     }
   }
 }
