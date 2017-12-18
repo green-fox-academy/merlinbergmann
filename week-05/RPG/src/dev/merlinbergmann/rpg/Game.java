@@ -4,6 +4,8 @@ import display.Display;
 import gfx.Assets;
 import gfx.ImageLoader;
 import gfx.SpriteSheet;
+import states.GameState;
+import states.State;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -21,6 +23,9 @@ public class Game implements Runnable {
   private BufferStrategy bs;
   private Graphics g;
 
+  //States
+  private State gameState;
+
 
   public Game(String title, int width, int height){
     this.width = width;
@@ -32,11 +37,15 @@ public class Game implements Runnable {
   private void init(){
     display = new Display(title, width, height);
     Assets.init();
+
+    gameState = new GameState();
+    State.setState(gameState);
   }
-  int x = 0;
+
 
   private void tick(){
-    x += 1;
+    if (State.getState() != null)
+      State.getState().tick();
 
   }
   private void render(){
@@ -51,8 +60,8 @@ public class Game implements Runnable {
 
     // Draw Here!
 
-    g.drawImage(Assets.background, 0, 0, null);
-    g.drawImage(Assets.player, x, 26, null);
+    if (State.getState() != null)
+      State.getState().render(g);
 
     // End Drawing!
     bs.show();
@@ -67,16 +76,26 @@ public class Game implements Runnable {
     double delta = 0;
     long now;
     long lastTime = System.nanoTime();
+    long timer = 0;
+    int ticks = 0;
 
     while(running) {
       now = System.nanoTime();
       delta += (now - lastTime) / timePerTick;
+      timer += now - lastTime;
       lastTime = now;
 
       if (delta >= 1) {
         tick();
         render();
+        ticks++;
         delta--;
+      }
+
+      if(timer >= 1000000000){
+        System.out.println("Ticks and Frames: " + ticks);
+        ticks = 0;
+        timer = 0;
       }
     }
 
