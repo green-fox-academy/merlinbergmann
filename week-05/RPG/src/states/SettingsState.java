@@ -1,11 +1,13 @@
 package states;
 
+import dev.merlinbergmann.rpg.Game;
+
 import java.awt.*;
 
 public class SettingsState extends State {
 
-  public SettingsState(){
-
+  public SettingsState(Game game){
+    super(game);
   }
   @Override
   public void tick() {

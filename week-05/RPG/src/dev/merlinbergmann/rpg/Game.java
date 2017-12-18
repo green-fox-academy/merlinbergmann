@@ -41,11 +41,11 @@ public class Game implements Runnable {
     display = new Display(title, width, height);
     Assets.init();
 
-    gameState = new GameState();
-    menuState = new MenuState();
-    settingsState = new SettingsState();
-    fightState = new FightState();
-    gameOverState = new GameOverState();
+    gameState = new GameState(this);
+    menuState = new MenuState(this);
+    settingsState = new SettingsState(this);
+    fightState = new FightState(this);
+    gameOverState = new GameOverState(this);
 
     State.setState(gameState);
   }

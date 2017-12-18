@@ -1,11 +1,13 @@
 package states;
 
+import dev.merlinbergmann.rpg.Game;
+
 import java.awt.*;
 
 public class GameOverState extends State {
 
-  public GameOverState(){
-
+  public GameOverState(Game game){
+    super(game);
 
   }
   @Override
