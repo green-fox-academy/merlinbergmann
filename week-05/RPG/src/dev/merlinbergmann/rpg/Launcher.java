@@ -1,9 +1,10 @@
 package dev.merlinbergmann.rpg;
 
-import display.Display;
+import dev.merlinbergmann.rpg.Game;
 
 public class Launcher {
   public static void main(String[] args) {
-    new Game("Bauhaus", 700, 700);
+    Game game = new Game("Bauhaus", 800, 800);
+    game.start();
   }
 }
