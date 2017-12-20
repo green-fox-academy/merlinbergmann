@@ -1,6 +1,7 @@
 package entities.creatures;
 
 import dev.merlinbergmann.rpg.Game;
+import dev.merlinbergmann.rpg.Handler;
 import gfx.Animation;
 import gfx.Assets;
 
@@ -11,8 +12,8 @@ public class Monster extends Creature {
   private Animation animMonster1;
 
 
-  public Monster(Game game,float x, float y) {
-    super(game, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+  public Monster(Handler handler, float x, float y) {
+    super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 
     animMonster1 = new Animation(100, Assets.monster1);
   }
@@ -26,6 +27,6 @@ public class Monster extends Creature {
 
   @Override
   public void render(Graphics g) {
-    g.drawImage(animMonster1.getCurrentFrame(), (int) (x - game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()),null);
+    g.drawImage(animMonster1.getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()),null);
   }
 }

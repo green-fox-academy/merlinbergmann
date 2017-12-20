@@ -1,6 +1,7 @@
 package entities.creatures;
 
 import dev.merlinbergmann.rpg.Game;
+import dev.merlinbergmann.rpg.Handler;
 import gfx.Animation;
 import gfx.Assets;
 
@@ -12,8 +13,13 @@ public class Player extends Creature {
   private Animation animPlayer;
 
 
-  public Player(Game game, float x, float y) {
-    super(game, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+  public Player(Handler handler, float x, float y) {
+    super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+
+    bounds.x = 16;
+    bounds.y = 32;
+    bounds.width = 32;
+    bounds.height = 32;
 
     animPlayer = new Animation(100, Assets.player);
   }
@@ -21,7 +27,7 @@ public class Player extends Creature {
   public void tick() {
     getInput();
     move();
-    game.getGameCamera().centerOnEntity(this);
+    handler.getGameCamera().centerOnEntity(this);
     //Animation
     animPlayer.tick();
 
@@ -31,19 +37,24 @@ public class Player extends Creature {
     xMove = 0;
     yMove = 0;
 
-    if (game.getKeyManager().up)
+    if (handler.getKeyManager().up)
       yMove = -speed;
-    if (game.getKeyManager().down)
+    if (handler.getKeyManager().down)
       yMove = speed;
-    if (game.getKeyManager().left)
+    if (handler.getKeyManager().left)
       xMove = -speed;
-    if (game.getKeyManager().right)
+    if (handler.getKeyManager().right)
       xMove = speed;
   }
 
   @Override
   public void render(Graphics g) {
 
-    g.drawImage(animPlayer.getCurrentFrame(), (int) (x - game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()),null);
+    g.drawImage(animPlayer.getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()),null);
+
+    g.setColor(Color.red);
+    g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
+    (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
+    bounds.width, bounds.height);
   }
 }

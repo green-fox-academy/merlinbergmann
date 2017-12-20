@@ -29,9 +29,6 @@ public class Game implements Runnable {
   //States
   private State gameState;
   private State menuState;
-  private State settingsState;
-  private State fightState;
-  private State gameOverState;
 
   //Input
   private KeyManager keyManager;
@@ -39,12 +36,14 @@ public class Game implements Runnable {
   //Camera
   private GameCamera gameCamera;
 
+  //Handler
+  private Handler handler;
+
   public Game(String title, int width, int height){
     this.width = width;
     this.height = height;
     this.title = title;
     keyManager = new KeyManager();
-
 
   }
   private void init(){
@@ -53,12 +52,10 @@ public class Game implements Runnable {
     Assets.init();
 
     gameCamera = new GameCamera(this, 0, 0);
+    handler = new Handler(this);
 
-    gameState = new GameState(this);
-    menuState = new MenuState(this);
-    settingsState = new SettingsState(this);
-    fightState = new FightState(this);
-    gameOverState = new GameOverState(this);
+    gameState = new GameState(handler);
+    menuState = new MenuState(handler);
 
     State.setState(gameState);
   }

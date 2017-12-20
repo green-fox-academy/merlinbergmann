@@ -1,6 +1,7 @@
 package states;
 
 import dev.merlinbergmann.rpg.Game;
+import dev.merlinbergmann.rpg.Handler;
 import entities.creatures.Monster;
 import entities.creatures.Player;
 import gfx.Assets;
@@ -16,11 +17,13 @@ public class GameState extends State{
 
   private World world;
 
-  public GameState(Game game){
-    super(game);
-    player = new Player(game, 200, 200);
-    monster1 = new Monster(game, 450, 300);
-    world = new World(game,"res/worlds/world1");
+  public GameState(Handler handler){
+    super(handler);
+    world = new World(handler,"res/worlds/world1");
+    handler.setWorld(world);
+    player = new Player(handler, 200, 200);
+    monster1 = new Monster(handler, 450, 300);
+
 
 
   }
