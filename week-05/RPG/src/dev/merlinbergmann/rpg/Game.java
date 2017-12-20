@@ -2,8 +2,10 @@ package dev.merlinbergmann.rpg;
 
 import display.Display;
 import gfx.Assets;
+import gfx.GameCamera;
 import gfx.ImageLoader;
 import gfx.SpriteSheet;
+import inputs.KeyManager;
 import states.*;
 
 import java.awt.*;
@@ -13,7 +15,7 @@ import java.awt.image.BufferedImage;
 public class Game implements Runnable {
 
   private Display display;
-  public int width, height;
+  private int width, height;
   public String title;
 
   private boolean running = false;
@@ -22,6 +24,8 @@ public class Game implements Runnable {
   private BufferStrategy bs;
   private Graphics g;
 
+  private BufferedImage background;
+
   //States
   private State gameState;
   private State menuState;
@@ -29,17 +33,26 @@ public class Game implements Runnable {
   private State fightState;
   private State gameOverState;
 
+  //Input
+  private KeyManager keyManager;
+
+  //Camera
+  private GameCamera gameCamera;
 
   public Game(String title, int width, int height){
     this.width = width;
     this.height = height;
     this.title = title;
+    keyManager = new KeyManager();
 
 
   }
   private void init(){
     display = new Display(title, width, height);
+    display.getFrame().addKeyListener(keyManager);
     Assets.init();
+
+    gameCamera = new GameCamera(this, 0, 0);
 
     gameState = new GameState(this);
     menuState = new MenuState(this);
@@ -52,6 +65,8 @@ public class Game implements Runnable {
 
 
   private void tick(){
+    keyManager.tick();
+
     if (State.getState() != null)
       State.getState().tick();
 
@@ -109,6 +124,22 @@ public class Game implements Runnable {
 
     stop();
 
+  }
+
+  public KeyManager getKeyManager(){
+    return keyManager;
+  }
+
+  public GameCamera getGameCamera(){
+    return gameCamera;
+  }
+
+  public int getWidth(){
+    return width;
+  }
+
+  public int getHeight(){
+    return height;
   }
 
   public synchronized void start(){
