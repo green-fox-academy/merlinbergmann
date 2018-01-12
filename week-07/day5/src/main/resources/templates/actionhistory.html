@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Fox Club - Login</title>
+</head>
+<body>
+<ul>
+    <li><a href="">Information</a></li>
+    <li><a href="">Nutrition Store</a></li>
+    <li><a href="">Trick Center</a></li>
+    <li><a href="">Action History</a></li>
+</ul>
+<h1>Welcome to the Action History</h1>
+<p th:text="'This is ' + ${fox.name} + '`s personal diary. Look at the good times you had together!'"></p>
+<ul>
+    <li><a> Ate pizza</a></li>
+    <li><a> Had a nap</a></li>
+    <li><a> Bit the neighbour</a></li>
+    <li><a> Chewed on a shoe</a></li>
+</ul>
+</body>
+</html>
