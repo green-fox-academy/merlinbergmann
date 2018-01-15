@@ -18,11 +18,9 @@ public class ToDo {
   public ToDo() {
   }
 
-  public ToDo(int id, String title, boolean isUrgent, boolean isDone) {
-    this.id = id;
+  public ToDo(String title) {
     this.title = title;
-    this.isUrgent = isUrgent;
-    this.isDone = isDone;
+
   }
 
   public int getId() {

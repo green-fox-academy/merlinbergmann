@@ -10,6 +10,10 @@ public interface TodoService {
 
   List<ToDo> getAllTodos();
   ToDo getToDo(int id);
-
+  void modifyTodo(ToDo todo);
+  void create(ToDo todo);
+  void makeUrgent(int id, boolean urgent);
+  void isDone(int id, boolean done);
+  void delete(int id);
 
 }
