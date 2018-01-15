@@ -19,7 +19,13 @@ public class TodoappApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoRepository.save(new ToDo("First Task"));
-		todoRepository.save(new ToDo("Second Task"));
+		todoRepository.deleteAll();
+		todoRepository.save(new ToDo("daily task"));
+		todoRepository.save(new ToDo("make the beds"));
+		todoRepository.save(new ToDo("do the washing up"));
+		todoRepository.save(new ToDo("clean the bathroom and the kitchen"));
+		todoRepository.save(new ToDo("clean the bathroom"));
+		todoRepository.save(new ToDo("wipe all the surfaces with a cloth"));
+
 	}
 }

@@ -52,4 +52,8 @@ public class TodoDBImpl implements TodoService {
   public void delete(int id) {
     todoRepository.delete(id);
   }
+
+  public void deleteAll(){
+    todoRepository.findAll().forEach(todoRepository::delete);
+  }
 }
