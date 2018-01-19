@@ -44,10 +44,10 @@
 
                 <div class="btn-group" role="group" aria-label="...">
                     <form action="#" th:action="@{'notion/voteup/' + ${notion.id}}" method="post">
-                        <button class="btn btn-success btn-sm" type="submit" name="upvote" th:value="${notion.id}"><p th:text="${notion.voting} + ' Ommm'"></p>
+                        <button class="btn btn-success btn-sm" type="submit" name="upvote" th:value="${notion.id}"><p th:text="${notion.likes} + ' Ommm'"></p>
                         </button></form>
                     <form action="#" th:action="@{'notion/votedown/' + ${notion.id}}" method="post">
-                        <button class="btn btn-danger btn-sm" type="submit" name="downvote" th:value="${notion.id}"><p th:text="${notion.voting} + ' Booo'"></p>
+                        <button class="btn btn-danger btn-sm" type="submit" name="downvote" th:value="${notion.id}"><p th:text="${notion.dislikes} + ' Booo'"></p>
                             </button>
                     </form>
                     <form action="#" th:action="@{'/notion/doDelete/' + ${notion.id}}" method="post">

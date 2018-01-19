@@ -47,11 +47,11 @@ public class NotionServiceImpl implements NotionService {
 
   @Override
   public void upVoting(int notionId) {
-    notionRepository.findOne(notionId).increaseVoting();
+    notionRepository.findOne(notionId).increaseLikes();
   }
 
   @Override
   public void downVoting(int notionId) {
-    notionRepository.findOne(notionId).decreaseVoting();
+    notionRepository.findOne(notionId).increaseDislikes();
   }
 }

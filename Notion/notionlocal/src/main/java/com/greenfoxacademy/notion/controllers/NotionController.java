@@ -4,8 +4,6 @@ import com.greenfoxacademy.notion.factories.NotionFactory;
 import com.greenfoxacademy.notion.models.Notion;
 import com.greenfoxacademy.notion.services.NotionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -57,9 +55,7 @@ public class NotionController {
   public String voteNotionUp(Model model, @PathVariable(value = "id") String id) {
     Notion notion = notionService.getNotionById(Integer.parseInt(id));
 
-    int voting = notion.getVoting();
-    voting += 1;
-    notion.setVoting(voting);
+    notion.increaseLikes();
 
     notionService.modifyNotion(notion);
     return "redirect:/notion";
@@ -69,9 +65,7 @@ public class NotionController {
   public String voteNotionDown(Model model, @PathVariable(value = "id") String id) {
     Notion notion = notionService.getNotionById(Integer.parseInt(id));
 
-    int voting = notion.getVoting();
-    voting -= 1;
-    notion.setVoting(voting);
+    notion.increaseDislikes();
 
     notionService.modifyNotion(notion);
     return "redirect:/notion";

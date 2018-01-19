@@ -1,24 +1,24 @@
 package com.greenfoxacademy.notion.models;
 
 
-import lombok.Builder;
-
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "notions_data")
+@Table
 public class Notion {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy =
+          GenerationType.IDENTITY)
   private int id;
   private String title;
   private String content;
-  @Column(name = "voting",columnDefinition = "default '0'")
-  private int voting;
-
-
+  @Column(name = "likes",
+          columnDefinition = "int default '0'")
+  private int likes;
+  @Column(name = "dislikes",
+          columnDefinition = "int default '0'")
+  private int dislikes;
 
   public Notion() {
 
@@ -54,20 +54,27 @@ public class Notion {
     this.content = content;
   }
 
-  public int getVoting() {
-    return voting;
+  public int getLikes() {
+    return likes;
   }
 
-  public void setVoting(int voting) {
-    this.voting = voting;
+  public void setLikes(int likes) {
+    this.likes = likes;
   }
 
-  public void increaseVoting() {
-    voting ++;
+  public void increaseLikes() {
+    likes++;
   }
 
-  public void decreaseVoting() {
-    voting --;
+  public int getDislikes() {
+    return dislikes;
   }
 
+  public void setDislikes(int dislikes) {
+    this.dislikes = dislikes;
   }
+
+  public void increaseDislikes() {
+    dislikes++;
+  }
+}

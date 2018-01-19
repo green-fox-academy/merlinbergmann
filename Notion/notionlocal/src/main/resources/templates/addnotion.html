@@ -33,7 +33,7 @@
     </div>
     <form action="#" th:action="@{~/post}" th:object="${newNotion}" method="post">
         <input type="hidden" th:field="*{id}"/>
-        <input type="hidden" th:field="*{voting}"/>
+        <input type="hidden" th:field="*{likes}"/>
     <div>
         <label for="Titlearea">Name your Notion</label>
         <input type="text" th:field="*{title}" class="form-control form-control-lg" id="Titlearea" placeholder="We exist as bio-feedback."/>
