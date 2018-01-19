@@ -46,14 +46,34 @@ public class NotionController {
     return "redirect:/notion";
   }
 
-  @PostMapping("/voteup")
-  public String voteNotionUp(@PathVariable int notionId, @ModelAttribute Notion notion) {
-    notionService.upVoting(notionId);
+  @PostMapping(value="notion/doDelete/{id}")
+  public String deleteNotion (Model model, @PathVariable(value = "id") String id) {
+
+        notionService.deleteNotion(Integer.parseInt(id));
+        return "redirect:/notion";
+    }
+
+  @PostMapping("/notion/voteup/{id}")
+  public String voteNotionUp(Model model, @PathVariable(value = "id") String id) {
+    Notion notion = notionService.getNotionById(Integer.parseInt(id));
+
+    int voting = notion.getVoting();
+    voting += 1;
+    notion.setVoting(voting);
+
+    notionService.modifyNotion(notion);
     return "redirect:/notion";
   }
-  @PostMapping("/votedown")
-  public String voteNotionDown(@PathVariable int notionId, @ModelAttribute Notion notion) {
-    notionService.downVoting(notionId);
+
+  @PostMapping("/notion/votedown/{id}")
+  public String voteNotionDown(Model model, @PathVariable(value = "id") String id) {
+    Notion notion = notionService.getNotionById(Integer.parseInt(id));
+
+    int voting = notion.getVoting();
+    voting -= 1;
+    notion.setVoting(voting);
+
+    notionService.modifyNotion(notion);
     return "redirect:/notion";
   }
 }
