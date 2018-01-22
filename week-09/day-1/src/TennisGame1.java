@@ -18,7 +18,7 @@ public class TennisGame1 implements TennisGame {
       player2Points++;
   }
 
-  public String getScore() {
+  public String getTotalScore() {
     String score = "";
     int tempScore=0;
     if (player1Points == player2Points)
