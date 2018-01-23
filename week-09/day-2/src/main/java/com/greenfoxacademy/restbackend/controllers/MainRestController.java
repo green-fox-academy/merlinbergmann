@@ -37,7 +37,31 @@ public class MainRestController {
     } else {
       return new AppendA(appendable);
     }
-
   }
 
+  @PostMapping("/dountil/{what}")
+  public Object doUntil(@PathVariable(value = "what") String operator
+                        ,@RequestBody Until until) {
+    if (until.getUntil() == null) {
+      return new ErrorResponse("Please provide a number!");
+    } else {
+      return new DoUntil(operator, until);
+    }
+  }
+
+  @PostMapping("/arrays")
+  public Object calculateArray(@RequestBody CalcArray calcArray) {
+
+    if (calcArray.getNumbers().length == 0) {
+      return new ErrorResponse("Please provide some numbers!");
+    } else if (calcArray.getWhat() == null) {
+      return new ErrorResponse("Please provide what to do with the numbers!");
+    } else {
+      return new CalculateArray(calcArray.getWhat(), calcArray);
+    }
+
+  }
+ // eg. /arrays with {"what": "sum", "numbers": [1,2,5,10]} will respond {"result": 18}
+ // eg. /arrays with {"what": "multiply", "numbers": [1,2,5,10]} will respond {"result": 100}
+ // eg. /arrays with {"what": "double", "numbers": [1,2,5,10]} will respond {"result": [2,4,10,20]}
 }
