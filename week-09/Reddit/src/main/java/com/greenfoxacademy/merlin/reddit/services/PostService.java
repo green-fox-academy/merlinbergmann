@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -34,6 +36,12 @@ public class PostService {
       topPosts = postRepository.findAllByScore(score);
     }
     List<PostDto> postDtos = convertPostToDTO(topPosts);
+    Collections.sort(postDtos, new Comparator<PostDto>() {
+      @Override
+      public int compare(PostDto o1, PostDto o2) {
+        return o1.getScore() - o2.getScore();
+      }
+    });
     return postDtos;
 }
 

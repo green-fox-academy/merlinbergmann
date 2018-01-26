@@ -1,6 +1,8 @@
 package com.greenfoxacademy.merlin.reddit.models.DTOs;
 
-public class ResultMessage {
+import org.springframework.http.ResponseEntity;
+
+public class ResultMessage implements ResponseDto {
 
   private String status;
 
