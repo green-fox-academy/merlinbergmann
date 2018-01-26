@@ -1,7 +1,10 @@
 package com.greenfoxacademy.merlin.reddit.models.entities;
 
 import javax.persistence.*;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -17,16 +20,29 @@ public class Post {
 
   @OneToOne
   @JoinColumn(name = "owner_id")
-  Owner owner;
+  private Owner owner;
+
+  @OneToMany
+  private List<Vote> votes;
 
   public Post() {
     timestamp = System.currentTimeMillis() / 1000;
+    votes = new ArrayList<>();
   }
 
   public Post(String title, String content, URL url) {
+    timestamp = System.currentTimeMillis() / 1000;
+    votes = new ArrayList<>();
     this.title = title;
     this.content = content;
     this.url = url;
+  }
+
+  public Post(String title, String content) throws MalformedURLException {
+    timestamp = System.currentTimeMillis() / 1000;
+    this.url = new URL("http://9gag.com/");
+    this.title = title;
+    this.content = content;
   }
 
   public int getId() {
@@ -83,5 +99,13 @@ public class Post {
 
   public void setOwner(Owner owner) {
     this.owner = owner;
+  }
+
+  public List<Vote> getVotes() {
+    return votes;
+  }
+
+  public void setVotes(List<Vote> votes) {
+    this.votes = votes;
   }
 }

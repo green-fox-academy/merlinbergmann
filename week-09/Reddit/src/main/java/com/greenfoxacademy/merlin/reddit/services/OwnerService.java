@@ -32,4 +32,9 @@ public class OwnerService {
     postService.createPost(post);
     return true;
   }
+
+  public Owner findByName(String userName) {
+    return ownerRepository.findByName(userName);
+  }
+
 }

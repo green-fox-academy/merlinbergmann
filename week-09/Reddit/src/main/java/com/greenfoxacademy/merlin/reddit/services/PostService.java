@@ -61,4 +61,12 @@ public class PostService {
     postDto.setUrl(post.getUrl());
     return postDto;
   }
+
+  public Post findOne(int id) {
+    return postRepository.findOne(id);
   }
+
+  public void save(Post post) {
+    postRepository.save(post);
+  }
+}

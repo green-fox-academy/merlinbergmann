@@ -9,7 +9,8 @@ import java.util.List;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Integer> {
 
-  List<Post> findAll();
+  Post findOne(int id);
 
+  List<Post> findAll();
   List<Post> findAllByScore(Integer score);
 }
