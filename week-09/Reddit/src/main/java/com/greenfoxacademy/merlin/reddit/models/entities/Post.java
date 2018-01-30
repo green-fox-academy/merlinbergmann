@@ -38,7 +38,8 @@ public class Post {
     this.url = url;
   }
 
-  public Post(String title, String content) throws MalformedURLException {
+  public Post(String title, String content)
+          throws MalformedURLException {
     timestamp = System.currentTimeMillis() / 1000;
     this.url = new URL("http://9gag.com/");
     this.title = title;
